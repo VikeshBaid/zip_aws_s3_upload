@@ -32,6 +32,6 @@ jobs:
           do
             if [ -d "$d" ];then
               echo $d
-              zip $d
+              zip $d ./$d
             fi
           done
