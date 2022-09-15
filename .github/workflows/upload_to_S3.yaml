@@ -1,0 +1,14 @@
+name: Upload sensors to S3
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Upload to S3'
+        required: true
+jobs:
+  Upload-Sensors:
+    name: Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
