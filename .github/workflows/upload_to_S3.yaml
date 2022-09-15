@@ -26,10 +26,12 @@ jobs:
           BUCKET="mytestbucketzip"
 
           echo "creating zip for each folder"
+          mkdir ./tmpzip
+          echo $(locate tempzip)
           for d in ./uploads/agents/*
           do
-            echo $d
             if [ -d "$d" ];then
               echo $d
+              zip $d
             fi
           done
