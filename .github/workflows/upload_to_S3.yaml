@@ -26,7 +26,7 @@ jobs:
           BUCKET="mytestbucketzip"
 
           echo "creating zip for each folder"
-          for d in ./uploads/agents
+          for d in ./uploads/agents/
           do
             if [ -d "$d" ];then
               echo $d
