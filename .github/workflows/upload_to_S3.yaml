@@ -8,6 +8,7 @@ on:
 jobs:
   Upload-Sensors:
     name: Upload
+    if: ${{ github.event.inputs.action== 'Upload' }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
