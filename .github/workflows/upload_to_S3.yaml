@@ -28,6 +28,7 @@ jobs:
           echo "creating zip for each folder"
           for d in ./uploads/agents/
           do
+            echo $d
             if [ -d "$d" ];then
               echo $d
             fi
