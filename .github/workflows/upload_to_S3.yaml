@@ -12,3 +12,22 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
+
+      - name: get aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Upload zip to s3
+        run: |
+          BUCKET="mytestbucketzip"
+
+          echo "creating zip for each folder"
+          for d in ./uploads/agents
+          do
+            if [ -d "$d" ];then
+              echo $d
+            fi
+          done
